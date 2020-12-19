@@ -1,0 +1,1008 @@
+import string
+import os
+import time
+from threading import Thread
+
+
+
+print("hello World");
+print("Eu sou o futuro");
+print("soma");
+a = 2+3;
+print(a);
+print('subtração');
+b = 3-2;
+print(b);
+print('divisão');
+c = 4/2;
+print(c);
+print('exponencial');
+d = 3**2;
+print(d);
+print('raiz quadrada');
+e = 9**0.5;
+print(e);
+
+e = 9**(1/2);
+print(e)
+
+print("soma entre variaveis");
+e = e + e;
+print(e);
+
+receita = 1000.00;
+margemLucro = 0.03;
+lucro = receita * margemLucro;
+
+print(lucro);
+
+vaOla = 'Olá';
+print(vaOla);
+
+vaTipo = type(vaOla);
+
+print(vaTipo);
+
+vaBoolean = type(vaOla) is str
+
+print(vaBoolean);
+
+print('A seguir uma "sitação" \n Está e uma nova linha');
+
+vaTamanho = len('a seguir thor');
+
+print(vaTamanho);
+
+s = 'Olá, mundo esta uma nova string';
+
+print(s[0]);
+
+print(s[2:]);
+
+print(s[5:10]);
+
+print(s[:-2]);
+
+print(s[::3]);
+
+print(s[::-1]);
+
+vaLinha = s + ' teste';
+
+print(vaLinha);
+
+vaLinha = vaLinha[2] * 10;
+
+print(vaLinha);
+
+vaLinha = s.lower();
+
+print(vaLinha);
+
+s = 'string';
+print('This is %s auxiliar' %(s));
+
+print('Printando ponto fluatuante %1.2f' %(13.144));
+
+vaString = 'String';
+vaFloat = 144.507;
+
+print('Temos uma %s. Temos float aqui %1.2f' %(vaString, vaFloat));
+
+a1 = 'One: {a}, Two: {b}, Three: {c}'.format(a=1, b=2, c=13.40);
+
+print(a1);
+
+vaLista = [1,2,3];
+print(vaLista);
+
+vaLista2 = [1, 'string', 14.89];
+print(vaLista2);
+print(vaLista[1:])
+
+vaLista = vaLista + vaLista2;
+print(vaLista);
+print(vaLista * 3);
+
+print(vaLista);
+print(len(vaLista));
+
+vaLista2 = vaLista2 + ["adição na lista"];
+print(vaLista2);
+
+vaLista2.append('mais um');
+print(vaLista2);
+
+vaTiraLista = vaLista2.pop();
+print(vaTiraLista);
+print(vaLista2);
+vaTiraLista = vaTiraLista + " "+  vaLista2.pop(3);
+print(vaTiraLista);
+print(vaLista2);
+
+vaNewList = ['a', 'e', 'x', 'b', 'c'];
+print(vaNewList);
+vaNewList.reverse();
+print(vaNewList);
+vaNewList.sort();
+print(vaNewList);
+
+vaLst_1 = [1,2,3];
+vaLst_2 = [4,5,9];
+vaLst_3 = [11,12,10];
+
+vaMatriz = [vaLst_1, vaLst_2, vaLst_3];
+
+print(vaMatriz);
+
+print(len(vaMatriz));
+print(len(vaMatriz[0]));
+
+vaValor = vaMatriz[1][1];
+
+print(vaValor);
+
+vaFist_col = [row[0] for row in vaMatriz];
+
+print(vaFist_col);
+
+# Dicionario
+
+vaDicio = {'chave': 'ab90293fghtr348sd', 'nome' : 'cripto', 'lista':[1,[2,3,9]], 'numero': 123};
+
+vaTipo = type(vaDicio);
+
+print(vaTipo);
+
+print(vaDicio['chave']);
+
+print(vaDicio['lista']);
+
+print(vaDicio['lista'][1][2]);
+
+vaDicio['nome'] = 'thor';
+
+print(vaDicio);
+
+print(vaDicio['nome']);
+
+print(vaDicio['numero']);
+
+vaDicio['numero']-=123;
+print(vaDicio['numero']);
+
+vaDicio['numero']+= 123.90;
+print(vaDicio['numero']);
+
+d = {};
+d['key'] = 1;
+
+print(d);
+
+d['key'] = {'name': 'Thor'};
+print(d);
+
+
+print(vaDicio);
+print(vaDicio.keys());
+
+vaListDicio = list(vaDicio.keys());
+print(vaListDicio[0]);
+
+values = vaDicio.values();
+
+print(values);
+
+itens = vaDicio.items();
+print(itens);
+
+#tupla é imutavel
+
+t = (1,2,3);
+vaTipo = type(t);
+print(vaTipo);
+print(t);
+t = (1, 'ola', 1.2, [9,10,15]);
+print(t);
+print(t[1]);
+vaIndex = t.index('ola');
+print(vaIndex);
+t = (12, 12, 12, 1, 2, 3);
+vaCount = t.count(12);
+print(vaCount);
+vaFile = open("openPython.txt");
+vaLinha = vaFile.read();
+print(vaLinha);
+vaArray = vaLinha.split(',');
+print(type(vaArray));
+print(vaArray);
+
+# criar arquivo
+arq = open('linha.txt', 'w');
+texto = [];
+texto.append('linha 1\n');
+texto.append('linha 2\n');
+texto.append('linha 3\n');
+arq.writelines(texto);
+arq.close();
+
+# ler arquivo
+arq = open('linha.txt', 'r')
+texto = arq.readlines()
+print(texto[0]);
+arq.seek(0);  #volta pro inicio da linha
+for linha in texto:
+    print(linha.replace("\\n","").strip());
+arq.close()
+
+# aula sobre set e Booleanos
+
+vaX = set();
+print(type(vaX));
+vaX.add(1);
+vaX.add(20);
+print(vaX);
+
+vaLista = [11,11,11,12,12,1,2,3,4,4,5,5,5,9];
+print(vaLista);
+valista_set = set(vaLista);
+print(valista_set);
+
+vaBoolean = type(valista_set) is set
+print(vaBoolean)
+
+vaBoolean = 1 > 2;
+print(vaBoolean);
+
+vaBoolean = 3 == 3.0;
+print(vaBoolean);
+
+vaBoolean = 3 != 3.0;
+print(vaBoolean);
+
+vaBoolean = 3 >= 2;
+print(vaBoolean);
+
+vaBoolean = 3>=2 and 3!=3.0;
+print(vaBoolean);
+
+vaBoolean = 3>=2 or 3!=3.0;
+print(vaBoolean);
+
+if 3 < 2:
+    print('a');
+elif 3 == 3:
+    print('c');
+else:
+    print('b');
+a = 1
+b = 1
+bol = a == b
+print(bol)
+
+if bol:
+    a += 10
+    print(a)
+
+bol = a == b
+
+if not bol:
+    a += 20
+    print(a)
+b = 20
+print(b)
+
+a = [10, 9, 9, 8, 5, 10, 7]
+a.sort()
+a.reverse()
+
+for aluno in a:
+    if aluno >= 9:
+        print('Aprovado!')
+    else:
+        if (aluno <= 8) and (aluno >=6):
+            print('Recuperação!')
+        else:
+            print('Reprovado!')
+
+vaLista = [1, 3, 4, 5, 6, 7, 8]
+for num in vaLista:
+    print('Número:', num)
+    print('Número vezes 2: ', num * 2)
+    print('Número ao quadrado', num**2)
+
+print('\n')
+
+for num in vaLista:
+    print('%d Resto  %d' %(num,(num%2)))
+
+print('\n')
+
+for num in vaLista:
+    vaPar = num % 2
+    if(vaPar == 0):
+        print('Número %d é par' %(num))
+    else:
+        print('Número %d é ímpar' %(num))
+
+print('\n')
+print(vaLista)
+print('\n')
+
+vaSum = 0
+for num in vaLista:
+    vaSum += num
+
+print(vaSum)
+
+print('\n')
+
+vaString = 'I like your smile'
+
+for vaChar in vaString:
+    print(vaChar)
+
+print('\n')
+
+vaTup = (1, 30, 40, 6, 9)
+for vaT in vaTup:
+    print(vaT)
+
+vaLista = [(1,2), (2,3), (3,4)]
+
+print('\n')
+
+print(type(vaLista))
+print(type(vaLista[0]))
+
+(t1, t2) = vaLista[0]
+
+print('\n')
+
+print(t1)
+print(t2)
+
+print('\n')
+
+for (t1, t2) in vaLista:
+    print(t1)
+    print(t2)
+    print("Mutiplicação = ", t1 * t2)
+    print('\n')
+
+print('Interação com dicionarios')
+
+d = {'k1': 1, 'k2': 2, 'k3': 3}
+
+for (key, valor) in d.items():
+    print(key, ':', valor)
+
+print('\n')
+for key in d.items():
+    print(key)
+
+print('Introdução a While')
+
+x = 1
+while x <= 10:
+    print('Valor de x é ', x)
+    x+= 1
+
+print('\n')
+
+x = 1
+y = 1
+while (x < 10 and y < 20):
+    if(x * y > 120):
+        break
+    print('O valor de x * y é ', x * y)
+    x+= 1
+    y+= 2
+else:
+    print('O valor de x * y é ', x * y)
+
+print('\n')
+
+#break
+x = 1
+vaLista = []
+while True:
+    if x > 15:
+        break
+    vaLista = vaLista + [x]
+    x+=1
+print(vaLista)
+
+print('\n')
+
+#Continue
+
+x = 1
+ate = 50
+while x < ate:
+    x += 1
+    if x % 2 == 1:
+        continue
+    if x % 2 == 0:
+        print(x, ' é par')
+
+#range
+
+vaRange = range(0, 10, 2)
+vaLista = list(vaRange)
+print(vaLista)
+
+for vaI in range(0, 100, 3):
+    if vaI > 20:
+      break
+    print(vaI)
+
+print('\n')
+vaX = []
+for vaI in range(0, 15):
+    vaX += [vaI]
+    #vaX.append(vaI)
+print(vaX)
+
+print('\n')
+
+#compressão em lista
+
+vaX2 = [i for i in range(1,20, 3)]
+print(vaX2)
+
+print('\n')
+
+#Criação de lista em pares
+vaX = [i for i in range(1, 20) if i % 2 == 0]
+print(vaX)
+
+
+
+vaString = [i for i in 'word']
+print(vaString)
+
+print('\n')
+
+#Conversão de temperatura de celsius para Fahrenheit
+
+vaCelsius = [0, 10, 15, 20 , 30, 50, 100]
+
+vaFhrenheit = [temp * (9/5) + 32 for temp in vaCelsius]
+
+print(vaFhrenheit)
+
+print('\n')
+
+#Exercicio
+
+vaStr = "Print only the words that start with s in this sentence"
+
+for vaI in vaStr.split():
+    if vaI[0] == 's':
+        print(vaI)
+
+print('\n')
+
+vaPar = [num for num in range(1, 11) if num % 2 == 0]
+print(vaPar)
+
+print('\n')
+
+vaDiv = [num for num in range(1, 51) if num % 3 == 0]
+print(vaDiv)
+
+print('\n')
+
+vaStr = 'Print every word in this sentence that has an even number of letters'
+for vaI in vaStr.split():
+    if len(vaI) % 2 == 0:
+        print('(%s) é uma palavra par' %(vaI))
+
+print('\n')
+
+for vaI in range(0,101):
+    if vaI % 3 == 0 and vaI % 5 == 0:
+        print('%d FizzBuzz' %(vaI))
+    elif vaI % 3 == 0:
+        print('%d Fizz' %(vaI))
+    elif vaI % 5 == 0:
+        print('%d Buzz' %(vaI))
+
+#Funções
+
+def PrimeiraFunção():
+    print('Hello 2019')
+    pass
+
+PrimeiraFunção()
+
+def Somar(num1, num2):
+    return num1+num2
+
+x = Somar(2,7)
+
+print(x)
+
+def Primo(num):
+    """
+    Metodo para checar numero primo
+    :param num:
+    :return:
+    """
+    for n in range(2,num):
+        if num % n == 0:
+            return 'Não é primo'
+            break
+        else:
+            return 'É primo'
+
+for n in range(0,10):
+    print('Número %d é: %s' %(n,Primo(n)))
+
+# Exppressões lambda
+def square(num):
+    result = num ** 2
+    return result
+
+print(square(3))
+
+def square_2(num):
+    return num ** 2
+
+print(square_2(4))
+
+def square3(num): return num ** 2
+
+print(square3(16))
+
+#logo apos a célula ela deixa de existir
+
+square4 = lambda num: num ** 2
+
+print(square4(7))
+print(square4(9))
+
+par = lambda x : x % 2 == 0
+
+print(par(5))
+print(par(8))
+
+#Declarações alinhadas e escopo
+#Exite quatro tipos de escopo
+# 1 - local
+# 2 - enclosing function - Funções definidas dentro de outras funções
+# 3 - global
+# 4 - built-in
+
+x = 25
+
+def printer():
+    x = 50
+    return x
+
+print(x)
+print(printer())
+
+x = 50
+def func(x):
+    print('x is ', x)
+    x = 10
+    print('change local x to ', x)
+
+func(x)
+print('x is still', x)
+
+
+def func():
+    global x
+    x = 10
+    print('change local x to ', x)
+
+func()
+print('x is still', x)
+
+# Aula 39 e 40
+
+# Calcular volume da esfera
+
+def volume_esfera(raio):
+    volume = (4 * 3.14 * raio ** 3)/3
+    print('volume da esfera: ',volume)
+
+volume_esfera(5)
+
+# verificar se numero esta entre o maximo e minimo
+def ran_boll(num, low, high):
+    if num >= low and  num <= high:
+        return True
+    return False
+
+vaBoolean = ran_boll(9,1,10)
+print(vaBoolean)
+
+# Dentro de uma string verificar o numero de letras minusculas e maiuscula
+def up_low(str):
+    maiuscula = 0
+    minuscula = 0
+    for x in str:
+        if not x.lower() == x:
+            maiuscula += 1
+        else:
+            minuscula += 1
+
+    print('Numero de letras mausculas :',  maiuscula)
+    print('Numero de letras minusculas :', minuscula)
+
+vaStr = 'Olá Sr. Roges, como você esta, terça-feira ?'
+up_low(vaStr)
+
+vaStr = 'S'
+print(vaStr.islower()) # verifica se minuscular
+print(vaStr.isupper()) # varifica se maiuscular
+
+def unique_list(lista):
+    print(set(lista))
+
+vaLista = [1,1,1,1,2,2,2,8,8,8,9,9,9,9,18,18,18,20,20,20,20]
+unique_list(vaLista)
+
+print(string.ascii_lowercase)
+print(string.ascii_uppercase)
+
+bola, quadrado = (1,2)
+
+print(bola)
+print(quadrado)
+
+class sample(object):
+    pass
+
+x = sample()
+
+print(type(1))
+print(type([]))
+print(type(()))
+print(type({}))
+print(type('ssss'))
+print(type(x))
+
+#Orientado a Objeto
+
+class Dog(object):
+    def __init__(self, raca):
+        self.raca = raca
+
+    def latir(self):
+        print('Au Au Au')
+
+zeus = Dog('Lab')
+print(type(zeus))
+print(zeus.raca)
+zeus.latir()
+
+class Circulo(object):
+    pi = 3.14
+    def __init__(self, raio):
+        self.raio = raio
+
+    def area(self):
+        return self.raio ** 2 * self.pi
+    def _setRaio(self, raio):
+        self.raio = raio
+    def obterRaio(self):
+        return self.raio
+
+a = Circulo(3)
+print(a.area())
+a._setRaio(7)
+print(a.obterRaio())
+print(a.area())
+
+
+# herença entre classes
+class Animal(object):
+    def __init__(self):
+        print('Animal criado')
+    def quemSouEu(self):
+        print('Eu sou animal')
+    def comer(self):
+        print('Comendo..')
+
+class cachorro(Animal):
+    def __init__(self):
+        print('cachorro criado')
+    def quemSouEu(self):
+        print('Eu sou cachorro')
+
+sam = cachorro()
+sam.quemSouEu()
+sam.comer()
+
+
+class book(object):
+    def __init__(self, livro, autor):
+        self.livro = livro
+        self.autor = autor
+    def getLivro(self):
+        return self.livro
+    def getAutor(self):
+        return self.autor
+
+b = book('conto', 'de paula')
+print(b.getLivro())
+print(b.getAutor())
+
+class Booker(object):
+    def __init__(self, titulo, autor, pagina):
+        self.titulo = titulo
+        self.autor = autor
+        self.pagina = pagina
+    def __str__(self):
+        return "titulo {a}".format(a=self.titulo)
+    def __len__(self):
+        return self.pagina
+
+livro = Booker("Python","Rodrigo", 100)
+
+print(livro)
+print(len(livro))
+
+
+class line(object):
+    def __init__(self, coor1, coor2):
+        self.coor1 = coor1
+        self.coor2 = coor2
+    def distance(self):
+        x1,y1 = self.coor1
+        x2,y2 = self.coor2
+        return ((x2 - x1)**2 + (y2 - y1)**2)**0.5
+    def slop(self):
+        x1,y1 = self.coor1
+        x2,y2 = self.coor2
+        return float((y2-y1))/(x2-x1)
+
+coordinate1 = (3,2)
+coordinate2 = (8,10)
+
+li = line(coordinate1,coordinate2)
+print(li.distance())
+print(li.slop())
+
+class cilindre(object):
+    def __init__(self, height = 1, radius = 1):
+            self.height = height
+            self.radius = radius
+    def volume(self):
+        return  self.height * (3.14) * (self.radius) ** 2
+
+    def area(self):
+        top = (3.14) * (self.radius) ** 2
+        return 2 * top + 2 * 3.14 * self.radius * self.height
+
+
+cil = cilindre(2,7)
+print(cil.volume())
+print(cil.area())
+
+
+try:
+    f = open( 'testfile.bat','w')
+    f.write('START /max iexplore.exe')
+except IOError:
+    print('Error file ')
+finally:
+    f.close()
+
+
+try:
+    path = 'C:/Users/willa/PycharmProjects/EstudoPython'
+    dir = os.listdir(path)
+    for file in dir:
+        if file == 'testfile.bat':
+            os.remove(file)
+except IOError:
+    print("Error file del")
+finally:
+    print("finaly")
+
+
+try:
+    for i in ['a', 'b', 'c']:
+        print(i ** 2)
+except:
+    print('Error multiple string')
+
+
+x = 5
+y = 0
+
+try:
+    z = x/y
+except ZeroDivisionError:
+    print('can´t divide by zero')
+finally:
+    print('All One')
+
+
+import math
+
+print(math.sqrt(2))
+
+from math import  sqrt
+
+print(sqrt(5))
+
+# Abrir anaconda command é digitar pip install biblioteca
+
+def fahrenheit(t):
+    return (9/5) * t + 32
+
+temp = [1, 3, 6, 9 , 10 , 40, 50, 120]
+
+map(fahrenheit, temp)
+
+vaLista = list(map(fahrenheit, temp))
+
+print(vaLista)
+
+vaTemp = list(map(lambda t:(9/5) * t + 32, temp))
+
+print(vaTemp)
+
+lst = [47, 11, 42, 13]
+
+import functools
+
+soma = functools.reduce(lambda x,y: x + y, lst)
+
+print(soma)
+
+f = filter(lambda x: x > 40, lst)
+
+print(list(f))
+
+y = [1, 2, 3, 4, 7, 19, 20]
+x = [4, 5, 6, 10, 5, 90, 80]
+
+vaZip = list(zip(x, y))
+
+print(vaZip)
+
+
+for i in vaZip:
+    print('{a} - {b}'.format(a = max(i), b = min(i)))
+
+
+
+vaListaNum = ['a', 'b', 'c', 'd', 'e']
+for number, item in enumerate(vaListaNum):
+    print(number, ':', item)
+
+
+vaBoolLista = [True, False, True, False]
+vaBooleanLista = [True, True, True, True]
+
+vaRetorno = all(vaBoolLista)
+print(vaRetorno)
+vaRetorno = any(vaBoolLista)
+print(vaRetorno)
+
+vaRetorno = all(vaBooleanLista)
+print(vaRetorno)
+vaRetorno = any(vaBooleanLista)
+print(vaRetorno)
+
+
+def word_lens(frase):
+    return list(map(len, frase.split()))
+
+print(word_lens("ab cccc dddde"))
+
+def digito_to_num(digito):
+     return functools.reduce(lambda x, y: x * 10 + y, digito)
+
+print(digito_to_num([3,4,2,1]))
+
+import datetime
+
+data = datetime.datetime(2019, 2, 20, 0, 2, 24).strftime('%d/%m/%Y')
+
+print(data)
+
+
+
+str = '@jairbolsonaro @divabaffa Bom dia Excelentíssimo!! Parabéns ao General Heleno! Ação rápida contra Fake News da Globo LIXO!!!!Selvaaaaaaaaaa https://t.co/36iFgOO1Dk '
+vaRetorno = ' '.join(i for i in str.split() if not ('https://' or 'http://') in i)
+vaRetorno = ' '.join(i for i in vaRetorno.split() if not ('@') in i)
+print(vaRetorno)
+
+
+#string = 'Hi there' # True example
+string = 'Good bye' # False example
+if 'Hi' in string:
+    print('Success!')
+
+
+frase = '      O que? Eu não quero frases com pontuações! Chega!     ? '
+
+frase_sem_pontuacao = ''.join(char for char in frase if char not in [ '!', '?'])
+
+print(frase_sem_pontuacao)
+
+print('erro de conexão')
+
+str = frase.strip()
+
+print(str)
+
+def unwanted_character(subj):
+    chars_to_remove = ['a', 'ante', 'após', 'até', 'com', 'contra', 'de', 'desde', 'em', 'entre', 'para', 'per', 'perante', 'por', 'sem', 'sob', 'sobre', 'trás']
+    chars_to_remove += ['da', 'um', 'uns', 'uma', 'por', 'e', 'do', 'umas']
+
+    return ' '.join([c for c in subj.split() if c not in chars_to_remove])
+
+
+
+
+class MyClass(object):
+    @staticmethod
+    def the_static_method(paStr):
+        print (paStr)
+
+MyClass.the_static_method(2)
+
+
+def fibonacci(x):
+    if x <= 1:
+        return x
+    else:
+        return fibonacci(x-1) + fibonacci(x-2)
+
+
+print(fibonacci(7))
+
+
+def fatorial(n):
+    if n == 0 or n == 1:
+        return n
+    else:
+        return n * fatorial(n-1)
+
+print(fatorial(4))
+
+
+#-*- coding: utf-8 -*-
+lista = [3, 0, 0, 0, 1, 1, 1, 0, 3, 3, 3]
+
+total = []
+contagem = []
+for ocorrencia in lista:
+    if total.count(ocorrencia) == 0:
+	    total.append(ocorrencia)
+	    contagem.append(lista.count(ocorrencia))
+
+print(total)
+print(contagem)
+
+
+def carro (velocidade, nome):
+    distancia = 0
+    while distancia <= 1000:
+        print("carro:", nome, distancia)
+        distancia += velocidade
+        time.sleep(0.3)
+
+#carro1 = Thread(target=carro, args=[1.1, "edu"])
+#carro2 = Thread(target=carro, args=[1.2, "paulo"])
+
+
+#carro1.start()
+#carro2.start()
+
+from teste import MyClass
+
+a = MyClass()
+print(a.f())
+a.retorno("dddaaaa")
+
